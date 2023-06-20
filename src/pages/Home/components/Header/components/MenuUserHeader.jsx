@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
+  Box,
   IconButton,
   Menu,
   MenuButton,
@@ -7,6 +8,7 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react';
+import { BiLogIn } from 'react-icons/bi';
 import { AiOutlineUser } from 'react-icons/ai';
 
 export default function MenuUserHeader() {
@@ -27,11 +29,18 @@ export default function MenuUserHeader() {
         Minha Conta
       </MenuButton>
       <MenuList>
-        <MenuItem>New File</MenuItem>
-        <MenuItem>New Window</MenuItem>
+        <MenuItem
+          icon={
+            <Box as='span' fontSize='24px'>
+              <BiLogIn />
+            </Box>
+          }
+        >
+          Entrar
+        </MenuItem>
         <MenuDivider />
-        <MenuItem>Open...</MenuItem>
-        <MenuItem>Save File</MenuItem>
+        <MenuItem>Termos de Serviço</MenuItem>
+        <MenuItem>Política de Privacidade</MenuItem>
       </MenuList>
     </Menu>
   );
