@@ -1,4 +1,4 @@
-import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   IconButton,
   Menu,
@@ -16,15 +16,15 @@ export default function MenuUserHeader() {
         as={IconButton}
         px={4}
         py={2}
+        colorScheme='transparent'
+        textColor='black'
         transition='all 0.2s'
         borderRadius='md'
-        borderWidth='1px'
-        _hover={{ bg: 'gray.400' }}
-        _expanded={{ bg: 'blue.400' }}
-        _focus={{ boxShadow: 'outline' }}
+        _hover={{ bg: 'gray.100' }}
         leftIcon={<AiOutlineUser />}
+        rightIcon={<ChevronDownIcon />}
       >
-        Minha Conta <ChevronDownIcon />
+        Minha Conta
       </MenuButton>
       <MenuList>
         <MenuItem>New File</MenuItem>
