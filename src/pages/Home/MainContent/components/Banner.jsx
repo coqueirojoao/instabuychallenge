@@ -20,7 +20,7 @@ function Banner() {
   }, []);
 
   return (
-    <Box position='relative' w='80%' mx='auto' my='5'>
+    <Box position='relative' w='70%' mx='auto' my='5'>
       {images.map((image, index) => (
         <motion.div
           key={index}
@@ -29,7 +29,7 @@ function Banner() {
           transition={{ duration: 0.5 }}
           style={{ position: 'absolute', top: 0, left: 0 }}
         >
-          <Image src={image} alt='Banner' rounded='md' boxShadow='base' />
+          <Image src={image} alt='Banner' boxShadow='base' />
         </motion.div>
       ))}
     </Box>
