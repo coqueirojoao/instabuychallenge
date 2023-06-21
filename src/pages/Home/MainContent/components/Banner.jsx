@@ -20,7 +20,7 @@ function Banner() {
   }, []);
 
   return (
-    <Box position='relative' w='70%' mx='auto' my='5'>
+    <Box position='relative' w='70%' mx='auto'>
       {images.map((image, index) => (
         <motion.div
           key={index}

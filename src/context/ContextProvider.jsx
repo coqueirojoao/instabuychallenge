@@ -3,7 +3,7 @@ import AppContext from './AppContext';
 import PropTypes from 'prop-types';
 
 function ContextProvider({ children }) {
-  const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState();
 
   useEffect(() => {
     const fetchAllProducts = async () => {
