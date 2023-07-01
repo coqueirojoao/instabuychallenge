@@ -2,22 +2,22 @@ import { Box, Flex, IconButton, Image, Text } from '@chakra-ui/react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../../context/AppContext';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { TbMeat } from 'react-icons/tb';
+import { BiCheese } from 'react-icons/bi';
 
-export default function MeatAndFishes() {
+export default function ColdCutsAndDairy() {
   const { allProducts } = useContext(AppContext);
   const containerRef = useRef(null);
 
-  const [MeatAndFishesItems, setMeatAndFishesItems] = useState();
+  const [ColdCutsAndDairyItems, setColdCutsAndDairyItems] = useState();
 
   useEffect(() => {
-    const getMeatAndFishesItems = () => {
+    const getColdCutsAndDairyItems = () => {
       if (allProducts) {
-        const data = allProducts.collection_items[1];
-        setMeatAndFishesItems(data);
+        const data = allProducts.collection_items[2];
+        setColdCutsAndDairyItems(data);
       }
     };
-    getMeatAndFishesItems();
+    getColdCutsAndDairyItems();
   }, [allProducts]);
 
   const scrollContainer = (scrollOffset) => {
@@ -29,7 +29,7 @@ export default function MeatAndFishes() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' pt='80' mt='8'>
+    <Box display='flex' justifyContent='center' w='100%' my='5'>
       <Flex align='center' w='70%' rounded='sm' shadow='lg' gap='3'>
         <IconButton
           aria-label='Voltar'
@@ -56,11 +56,11 @@ export default function MeatAndFishes() {
           maxW='calc(100vw - 150px)'
         >
           <Box display='flex' alignItems='center' fontSize='2xl' gap='2'>
-            <TbMeat color='red' />
-            <Text fontWeight='700'>{MeatAndFishesItems?.title}</Text>
+            <BiCheese color='blue' />
+            <Text fontWeight='700'>{ColdCutsAndDairyItems?.title}</Text>
           </Box>
           <Flex>
-            {MeatAndFishesItems?.items?.map((product) => (
+            {ColdCutsAndDairyItems?.items?.map((product) => (
               <Box
                 key={product.id}
                 w='300px'

@@ -24,7 +24,7 @@ export default function MenuUserHeader() {
         borderRadius='md'
         _hover={{ bg: 'gray.100' }}
         leftIcon={<AiOutlineUser />}
-        rightIcon={<ChevronDownIcon />}
+        rightIcon={<ChevronDownIcon mx='3' />}
       >
         Minha Conta
       </MenuButton>
