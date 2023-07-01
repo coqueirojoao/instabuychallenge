@@ -30,7 +30,7 @@ export default function ColdCutsAndDairy() {
 
   return (
     <Box display='flex' justifyContent='center' w='100%' my='5'>
-      <Flex align='center' w='70%' rounded='sm' shadow='lg' gap='3'>
+      <Flex align='center' w='70%' rounded='3xl' shadow='lg' gap='3' bg='white'>
         <IconButton
           aria-label='Voltar'
           icon={<ChevronLeftIcon fontSize='3xl' />}
@@ -55,7 +55,7 @@ export default function ColdCutsAndDairy() {
           ref={containerRef}
           maxW='calc(100vw - 150px)'
         >
-          <Box display='flex' alignItems='center' fontSize='2xl' gap='2'>
+          <Box display='flex' alignItems='center' fontSize='2xl' gap='2' pt='3'>
             <BiCheese color='blue' />
             <Text fontWeight='700'>{ColdCutsAndDairyItems?.title}</Text>
           </Box>

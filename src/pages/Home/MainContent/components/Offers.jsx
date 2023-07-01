@@ -17,8 +17,8 @@ export default function Offers() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' my='5'>
-      <Flex align='center' w='70%' rounded='sm' shadow='lg' gap='3'>
+    <Box display='flex' justifyContent='center' w='100%' py='5'>
+      <Flex align='center' w='70%' rounded='2xl' shadow='lg' gap='3' bg='white'>
         <IconButton
           aria-label='Voltar'
           icon={<ChevronLeftIcon fontSize='3xl' />}
@@ -43,7 +43,7 @@ export default function Offers() {
           ref={containerRef}
           maxW='calc(100vw - 150px)'
         >
-          <Box display='flex' alignItems='center' fontSize='2xl' gap='2'>
+          <Box display='flex' alignItems='center' fontSize='2xl' gap='2' py='2'>
             <AiOutlineThunderbolt color='green' />
             <Text fontWeight='700'>Ofertas</Text>
           </Box>

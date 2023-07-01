@@ -1,5 +1,12 @@
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
+import SocialIcons from './SocialIcons';
+import visa from '../../../../../assets/logos/visa.gif';
+import elo from '../../../../../assets/logos/elo.gif';
+import hipercard from '../../../../../assets/logos/hipercard.gif';
+import amex from '../../../../../assets/logos/amex.gif';
+import pix from '../../../../../assets/logos/pix.gif';
+import master from '../../../../../assets/logos/master.gif';
 
 export default function ContactContent() {
   const contactHelpers = [
@@ -17,7 +24,6 @@ export default function ContactContent() {
     },
     {
       title: 'Nossos Canais',
-      content: ['Logo1', 'Logo2', 'Logo3'],
     },
   ];
   return (
@@ -40,7 +46,7 @@ export default function ContactContent() {
           <Text fontSize='larger' fontWeight='600'>
             {contactHelper.title}
           </Text>
-          {contactHelper.content.map((content) => (
+          {contactHelper.content?.map((content) => (
             <Text
               key={content}
               fontSize='sm'
@@ -62,6 +68,27 @@ export default function ContactContent() {
               ) : null}
             </Text>
           ))}
+          {contactHelper.title === 'Nossos Canais' ? <SocialIcons /> : null}
+          {contactHelper.title === 'Nossos Canais' ? (
+            <Box display='flex' flexDirection='column' pt='10'>
+              <Text fontSize='25' fontWeight='600'>
+                Pagamento
+              </Text>
+              <Box pt='5' display='flex' alignItems='center' w='full' gap='4'>
+                <Image src={pix} />
+                <Image src={elo} />
+                <Image src={visa} />
+                <Image src={master} />
+                <Image src={hipercard} />
+                <Image src={amex} />
+              </Box>
+              <Box display='flex'>
+                <Text fontSize='sm' fontWeight='600' pt='5'>
+                  Ou pague na entrega com dinheiro, cartão ou boleto.
+                </Text>
+              </Box>
+            </Box>
+          ) : null}
         </Box>
       ))}
     </Box>

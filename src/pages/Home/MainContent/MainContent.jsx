@@ -9,7 +9,7 @@ import NonAlcoholicBeers from './components/NonAlcoholicBeers';
 export default function MainContent() {
   return (
     <div>
-      <Box position='relative'>
+      <Box position='relative' bg='gray.200'>
         <Offers />
         <Banner />
         <MeatAndFishes />

@@ -29,7 +29,7 @@ function Banner() {
           transition={{ duration: 0.5 }}
           style={{ position: 'absolute', top: 0, left: 0 }}
         >
-          <Image src={image} alt='Banner' boxShadow='base' />
+          <Image src={image} alt='Banner' boxShadow='base' rounded='2xl' />
         </motion.div>
       ))}
     </Box>
