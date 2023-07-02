@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react';
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
-function SocialIcons() {
+const SocialIcons = () => {
   return (
-    <Box display='flex' gap='5'>
+    <Box display='flex' gap={5} mb={4}>
       <Box
         as='button'
         display='flex'
@@ -48,6 +48,6 @@ function SocialIcons() {
       </Box>
     </Box>
   );
-}
+};
 
 export default SocialIcons;

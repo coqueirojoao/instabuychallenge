@@ -8,11 +8,17 @@ import { BiCheese } from 'react-icons/bi';
 export default function NavBar() {
   return (
     <Box w='100%' borderTop='1px' borderBottom='1px' borderColor='gray.300'>
-      <Box display='flex' alignItems='center' py='5' px='64' gap='2'>
+      <Box
+        display='flex'
+        flexDirection={['column', 'row']}
+        py='5'
+        px={['4', '64']}
+        gap='2'
+      >
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <AiOutlineHome />
             </Box>
           }
@@ -27,7 +33,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <BsGrid />
             </Box>
           }
@@ -42,7 +48,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <AiOutlineTag />
             </Box>
           }
@@ -57,7 +63,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <TbGrill />
             </Box>
           }
@@ -72,7 +78,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <GiSteak />
             </Box>
           }
@@ -87,7 +93,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <BiCheese />
             </Box>
           }
@@ -102,7 +108,7 @@ export default function NavBar() {
         <Button
           colorScheme='transparent'
           leftIcon={
-            <Box as='span' fontSize='30px'>
+            <Box as='span' fontSize={['24px', '30px']}>
               <GiBeerBottle />
             </Box>
           }

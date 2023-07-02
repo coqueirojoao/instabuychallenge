@@ -29,16 +29,17 @@ export default function ContactContent() {
   return (
     <Box
       display='flex'
-      gap='100'
+      gap={['none', '100']}
       bg='white'
       borderTop='1px'
       borderColor='gray.200'
+      flexDirection={['column', 'row']}
     >
       {contactHelpers.map((contactHelper) => (
         <Box
           key={contactHelper.title}
-          pl='200'
-          py='70'
+          pl={['10', '200']}
+          py={['10', '70']}
           display='flex'
           flexDirection='column'
           gap='2'
@@ -60,7 +61,7 @@ export default function ContactContent() {
               {content}
               {content === 'Telefone' ? (
                 <Text fontSize='larger'>
-                  <PhoneIcon /> {`(61) 99999-9999`}
+                  <PhoneIcon /> {`(61) 99999 - 9999`}
                 </Text>
               ) : null}
               {content === 'E-mail' ? (

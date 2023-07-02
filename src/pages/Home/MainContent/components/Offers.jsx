@@ -17,8 +17,16 @@ export default function Offers() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' py='5'>
-      <Flex align='center' w='70%' rounded='2xl' shadow='lg' gap='3' bg='white'>
+    <Box display='flex' justifyContent='center' py='5'>
+      <Flex
+        align='center'
+        w={['full', '70%']}
+        rounded={['none', '2xl']}
+        shadow='lg'
+        gap='3'
+        justify='center'
+        bg='white'
+      >
         <IconButton
           aria-label='Voltar'
           icon={<ChevronLeftIcon fontSize='3xl' />}

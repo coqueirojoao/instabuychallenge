@@ -3,11 +3,13 @@ import { Box, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import bannerImg1 from '../../../../assets/bannerImg1.jpeg';
 import bannerImg2 from '../../../../assets/bannerImg2.jpeg';
+import { useMediaQuery } from 'react-responsive';
 
 const images = [bannerImg1, bannerImg2];
 
 function Banner() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const isMobileDevice = useMediaQuery({ maxWidth: 768 }); // Verifica se é um dispositivo móvel
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,6 +20,10 @@ function Banner() {
       clearInterval(interval);
     };
   }, []);
+
+  if (isMobileDevice) {
+    return null; // Retorna null para não renderizar o componente em dispositivos móveis
+  }
 
   return (
     <Box position='relative' w='70%' mx='auto'>

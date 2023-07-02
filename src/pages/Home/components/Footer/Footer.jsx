@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react';
 import ContactContent from './components/ContactContent';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <Box w='full'>
       <ContactContent />
     </Box>
   );
-}
+};
+
+export default Footer;

@@ -29,8 +29,22 @@ export default function MeatAndFishes() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' pt='80' mt='8'>
-      <Flex align='center' w='70%' rounded='2xl' shadow='lg' gap='3' bg='white'>
+    <Box
+      display='flex'
+      justifyContent='center'
+      w='100%'
+      pt={['none', '80']}
+      mt={['none', '8']}
+    >
+      <Flex
+        align='center'
+        w={['full', '70%']}
+        rounded={['none', '2xl']}
+        justify='center'
+        shadow='lg'
+        gap='3'
+        bg='white'
+      >
         <IconButton
           aria-label='Voltar'
           icon={<ChevronLeftIcon fontSize='3xl' />}

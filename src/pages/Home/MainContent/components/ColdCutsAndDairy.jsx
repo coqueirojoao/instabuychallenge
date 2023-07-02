@@ -30,7 +30,15 @@ export default function ColdCutsAndDairy() {
 
   return (
     <Box display='flex' justifyContent='center' w='100%' my='5'>
-      <Flex align='center' w='70%' rounded='3xl' shadow='lg' gap='3' bg='white'>
+      <Flex
+        align='center'
+        w={['full', '70%']}
+        rounded={['none', '2xl']}
+        justify='center'
+        shadow='lg'
+        gap='3'
+        bg='white'
+      >
         <IconButton
           aria-label='Voltar'
           icon={<ChevronLeftIcon fontSize='3xl' />}
