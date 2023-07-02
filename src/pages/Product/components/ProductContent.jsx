@@ -23,7 +23,7 @@ export default function ProductContent({ product }) {
         <Image
           src={`https://assets.instabuy.com.br/ib.item.image.large/l-${product?.images[0]}`}
           w='500px'
-          rounded={['lg', 'none']}
+          rounded='lg'
         />
         <Flex
           align='center'
