@@ -10,7 +10,9 @@ export default function NavBar() {
     <Box w='100%' borderTop='1px' borderBottom='1px' borderColor='gray.300'>
       <Box
         display='flex'
-        flexDirection={['column', 'row']}
+        flexDirection='row'
+        flexWrap='wrap'
+        justifyContent='center'
         py='5'
         px={['4', '64']}
         gap='2'

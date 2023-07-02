@@ -11,11 +11,12 @@ export default function Header() {
       <Box
         display='flex'
         flexDirection={['column', 'row']}
+        flexWrap={['wrap']}
         alignItems={['center', 'center']}
-        justifyContent='space-evenly'
+        justifyContent={['space-between', 'center']}
         py={['5', '5']}
-        px={['4', '64']}
-        gap='2'
+        px={['4', '32']}
+        gap='5'
       >
         <Box display='block' width='60px'>
           <Image

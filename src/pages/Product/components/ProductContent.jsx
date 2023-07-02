@@ -12,19 +12,32 @@ export default function ProductContent({ product }) {
       alignItems='center'
       flexDirection='column'
     >
-      <Flex w='70%' bg='white' rounded='lg' justify='center' align='center'>
+      <Flex
+        w={['90%', '70%']}
+        bg='white'
+        rounded='lg'
+        justify='center'
+        align='center'
+        direction={['column', 'row']}
+      >
         <Image
           src={`https://assets.instabuy.com.br/ib.item.image.large/l-${product?.images[0]}`}
           w='500px'
+          rounded={['lg', 'none']}
         />
         <Flex
           align='center'
-          pl='10'
+          pl={['none', '10']}
           direction='column'
-          gap='5'
+          gap={['none', '5']}
           justify='center'
         >
-          <Text fontSize='30' fontWeight='600'>
+          <Text
+            fontSize='30'
+            fontWeight='600'
+            px={['5', 'none']}
+            textAlign={['center', 'none']}
+          >
             {product?.name}
           </Text>
           {product?.prices[0].promo_price ? (
@@ -59,20 +72,22 @@ export default function ProductContent({ product }) {
               <Text fontSize='15' pl='2' color='black'>{` /uni`}</Text>
             </Flex>
           )}
-          <Button colorScheme='green' size='lg' rounded='lg' mt='10'>
+          <Button colorScheme='green' size='lg' rounded='lg' my='10'>
             Adicionar ao carrinho
           </Button>
         </Flex>
       </Flex>
       <Flex
-        w='70%'
+        w={['90%', '70%']}
         bg='white'
         rounded='lg'
-        mt='5'
-        direction='column'
-        gap='2'
-        py='10'
         justify='center'
+        align='center'
+        gap='2'
+        mt='5'
+        py='10'
+        direction='column'
+        textAlign={['center', 'none']}
       >
         <Text fontSize='25' px='5'>
           Descrição do Produto
@@ -82,14 +97,16 @@ export default function ProductContent({ product }) {
         </Text>
       </Flex>
       <Flex
-        w='70%'
+        w={['90%', '70%']}
         bg='white'
         rounded='lg'
-        mt='5'
-        direction='column'
-        gap='2'
-        py='10'
         justify='center'
+        align='center'
+        gap='2'
+        mt='5'
+        py='10'
+        direction='column'
+        textAlign={['center', 'none']}
       >
         <Text fontSize='15' px='5'>
           Informações sobre o produto ou embalagem apresentada pode não ser
