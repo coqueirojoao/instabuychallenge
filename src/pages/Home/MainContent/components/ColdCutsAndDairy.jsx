@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../../context/AppContext';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { BiCheese } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 export default function ColdCutsAndDairy() {
   const { allProducts } = useContext(AppContext);
@@ -69,51 +70,53 @@ export default function ColdCutsAndDairy() {
           </Box>
           <Flex>
             {ColdCutsAndDairyItems?.items?.map((product) => (
-              <Box
-                key={product.id}
-                w='300px'
-                h='400px'
-                mr='4'
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-                flexDirection='column'
-              >
-                <Image
-                  src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
-                  alt={product.name}
-                  boxSize='130px'
-                  objectFit='cover'
-                />
-                <Box display='flex' alignItems='center' gap='2'>
-                  {product.prices[0].promo_price ? (
-                    <Text color='red.600' fontWeight='600'>
-                      {product.prices[0].promo_price.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL',
-                      })}
-                    </Text>
-                  ) : null}
-                  {product.prices[0].promo_price ? (
-                    <Text fontSize='smaller' textDecoration='line-through'>
-                      {product.prices[0].price.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL',
-                      })}
-                    </Text>
-                  ) : (
-                    <Text color='black' fontWeight='600'>
-                      {product.prices[0].price.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL',
-                      })}
-                    </Text>
-                  )}
+              <Link to={`/product/${product.slug}`} key={product.id}>
+                <Box
+                  key={product.id}
+                  w='300px'
+                  h='400px'
+                  mr='4'
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  flexDirection='column'
+                >
+                  <Image
+                    src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
+                    alt={product.name}
+                    boxSize='130px'
+                    objectFit='cover'
+                  />
+                  <Box display='flex' alignItems='center' gap='2'>
+                    {product.prices[0].promo_price ? (
+                      <Text color='red.600' fontWeight='600'>
+                        {product.prices[0].promo_price.toLocaleString('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        })}
+                      </Text>
+                    ) : null}
+                    {product.prices[0].promo_price ? (
+                      <Text fontSize='smaller' textDecoration='line-through'>
+                        {product.prices[0].price.toLocaleString('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        })}
+                      </Text>
+                    ) : (
+                      <Text color='black' fontWeight='600'>
+                        {product.prices[0].price.toLocaleString('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        })}
+                      </Text>
+                    )}
+                  </Box>
+                  <Text fontSize='small' color='gray.600' w='50' h='100px'>
+                    {product.name}
+                  </Text>
                 </Box>
-                <Text fontSize='small' color='gray.600' w='50' h='100px'>
-                  {product.name}
-                </Text>
-              </Box>
+              </Link>
             ))}
           </Flex>
         </Box>

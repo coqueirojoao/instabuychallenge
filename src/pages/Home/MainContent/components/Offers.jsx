@@ -3,6 +3,7 @@ import AppContext from '../../../../context/AppContext';
 import { Box, Flex, IconButton, Image, Text } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { AiOutlineThunderbolt } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 export default function Offers() {
   const { allProducts } = useContext(AppContext);
@@ -57,40 +58,41 @@ export default function Offers() {
           </Box>
           <Flex>
             {allProducts?.promo?.map((product) => (
-              <Box
-                key={product.id}
-                w='300px'
-                h='300px'
-                mr='4'
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-                flexDirection='column'
-              >
-                <Image
-                  src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
-                  alt={product.name}
-                  boxSize='130px'
-                  objectFit='cover'
-                />
-                <Box display='flex' alignItems='center' gap='2'>
-                  <Text color='red.600' fontWeight='600'>
-                    {product.prices[0].promo_price.toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </Text>
-                  <Text fontSize='smaller' textDecoration='line-through'>
-                    {product.prices[0].price.toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
+              <Link to={`/product/${product.slug}`} key={product.id}>
+                <Box
+                  w='300px'
+                  h='300px'
+                  mr='4'
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  flexDirection='column'
+                >
+                  <Image
+                    src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
+                    alt={product.name}
+                    boxSize='130px'
+                    objectFit='cover'
+                  />
+                  <Box display='flex' alignItems='center' gap='2'>
+                    <Text color='red.600' fontWeight='600'>
+                      {product.prices[0].promo_price.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </Text>
+                    <Text fontSize='smaller' textDecoration='line-through'>
+                      {product.prices[0].price.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </Text>
+                  </Box>
+                  <Text fontSize='small' color='gray.600' w='50' h='100px'>
+                    {product.name}
                   </Text>
                 </Box>
-                <Text fontSize='small' color='gray.600' w='50' h='100px'>
-                  {product.name}
-                </Text>
-              </Box>
+              </Link>
             ))}
           </Flex>
         </Box>
