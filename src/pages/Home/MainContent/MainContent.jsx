@@ -5,18 +5,18 @@ import MeatAndFishes from './components/MeatAndFishes';
 import ColdCutsAndDairy from './components/ColdCutsAndDairy';
 import AlcoholicBeers from './components/AlcoholicBeers';
 import NonAlcoholicBeers from './components/NonAlcoholicBeers';
+import Loading from '../../components/Loading';
 
 export default function MainContent() {
   return (
-    <div>
-      <Box position='relative' bg='gray.200'>
-        <Offers />
-        <Banner />
-        <MeatAndFishes />
-        <ColdCutsAndDairy />
-        <AlcoholicBeers />
-        <NonAlcoholicBeers />
-      </Box>
-    </div>
+    <Box position='relative' bg='gray.200'>
+      <Loading />
+      <Offers />
+      <Banner />
+      <MeatAndFishes />
+      <ColdCutsAndDairy />
+      <AlcoholicBeers />
+      <NonAlcoholicBeers />
+    </Box>
   );
 }

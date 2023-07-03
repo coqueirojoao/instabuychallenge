@@ -1,6 +1,5 @@
 import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import stripTags from 'striptags';
 
 export default function ProductContent({ product }) {
   return (
@@ -92,9 +91,12 @@ export default function ProductContent({ product }) {
         <Text fontSize='25' px='5'>
           Descrição do Produto
         </Text>
-        <Text fontSize='16' px='5' color='gray.600'>
-          {stripTags(product?.description)}
-        </Text>
+        <Text
+          fontSize='16'
+          px='5'
+          color='gray.600'
+          dangerouslySetInnerHTML={{ __html: product?.description }}
+        ></Text>
       </Flex>
       <Flex
         w={['90%', '70%']}
