@@ -4,8 +4,12 @@ import { BsGrid } from 'react-icons/bs';
 import { TbGrill } from 'react-icons/tb';
 import { GiSteak, GiBeerBottle } from 'react-icons/gi';
 import { BiCheese } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
+
+  const navigate = useNavigate();
+
   return (
     <Box w='100%' borderTop='1px' borderBottom='1px' borderColor='gray.300'>
       <Box
@@ -29,6 +33,7 @@ export default function NavBar() {
           transition='all 0.2s'
           borderRadius='md'
           _hover={{ bg: 'gray.100' }}
+          onClick={() => navigate('/')}
         >
           Início
         </Button>

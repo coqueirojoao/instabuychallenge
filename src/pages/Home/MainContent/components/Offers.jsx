@@ -58,8 +58,8 @@ export default function Offers() {
           </Box>
           <Flex>
             {allProducts?.promo?.map((product) => (
-              <Link to={`/product/${product.slug}`} key={product.id}>
                 <Box
+                  key={product.id}
                   w='300px'
                   h='300px'
                   mr='4'
@@ -68,6 +68,7 @@ export default function Offers() {
                   alignItems='center'
                   flexDirection='column'
                 >
+                  <Link to={`/product/${product.slug}`}>
                   <Image
                     src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
                     alt={product.name}
@@ -91,8 +92,8 @@ export default function Offers() {
                   <Text fontSize='small' color='gray.600' w='50' h='100px'>
                     {product.name}
                   </Text>
+                  </Link>
                 </Box>
-              </Link>
             ))}
           </Flex>
         </Box>

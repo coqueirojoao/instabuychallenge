@@ -76,8 +76,7 @@ export default function MeatAndFishes() {
           </Box>
           <Flex>
             {MeatAndFishesItems?.items?.map((product) => (
-              <Link to={`/product/${product.slug}`} key={product.id}>
-                <Box
+              <Box
                   key={product.id}
                   w='300px'
                   h='400px'
@@ -87,6 +86,7 @@ export default function MeatAndFishes() {
                   alignItems='center'
                   flexDirection='column'
                 >
+              <Link to={`/product/${product.slug}`}>
                   <Image
                     src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
                     alt={product.name}
@@ -121,8 +121,8 @@ export default function MeatAndFishes() {
                   <Text fontSize='small' color='gray.600' w='50' h='100px'>
                     {product.name}
                   </Text>
-                </Box>
               </Link>
+                </Box>
             ))}
           </Flex>
         </Box>
