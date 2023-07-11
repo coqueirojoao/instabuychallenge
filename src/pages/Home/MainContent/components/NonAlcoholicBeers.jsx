@@ -30,7 +30,7 @@ export default function NonAlcoholicBeers() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' my='5'>
+    <Box display='flex' justifyContent='center' w='100%' my='5' id='nonAlcoholicBeers'>
       <Flex
         align='center'
         w={['full', '70%']}

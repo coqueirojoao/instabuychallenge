@@ -36,6 +36,7 @@ export default function MeatAndFishes() {
       w='100%'
       pt={['none', '80']}
       mt={['none', '8']}
+      id='meatAndFishesProduct'
     >
       <Flex
         align='center'

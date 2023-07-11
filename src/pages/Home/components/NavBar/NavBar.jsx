@@ -1,8 +1,6 @@
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, Link } from '@chakra-ui/react';
 import { AiOutlineHome, AiOutlineTag } from 'react-icons/ai';
-import { BsGrid } from 'react-icons/bs';
-import { TbGrill } from 'react-icons/tb';
-import { GiSteak, GiBeerBottle } from 'react-icons/gi';
+import { GiSteak, GiBeerBottle, GiWaterBottle } from 'react-icons/gi';
 import { BiCheese } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,21 +35,7 @@ export default function NavBar() {
         >
           Início
         </Button>
-        <Button
-          colorScheme='transparent'
-          leftIcon={
-            <Box as='span' fontSize={['24px', '30px']}>
-              <BsGrid />
-            </Box>
-          }
-          fontWeight='200'
-          textColor='black'
-          transition='all 0.2s'
-          borderRadius='md'
-          _hover={{ bg: 'gray.100' }}
-        >
-          Todas Categorias
-        </Button>
+        <Link href='#offerProducts'>
         <Button
           colorScheme='transparent'
           leftIcon={
@@ -67,21 +51,8 @@ export default function NavBar() {
         >
           Ofertas
         </Button>
-        <Button
-          colorScheme='transparent'
-          leftIcon={
-            <Box as='span' fontSize={['24px', '30px']}>
-              <TbGrill />
-            </Box>
-          }
-          fontWeight='200'
-          textColor='black'
-          transition='all 0.2s'
-          borderRadius='md'
-          _hover={{ bg: 'gray.100' }}
-        >
-          Kit Churrasco
-        </Button>
+        </Link>
+        <Link href='#meatAndFishesProduct'>
         <Button
           colorScheme='transparent'
           leftIcon={
@@ -97,6 +68,8 @@ export default function NavBar() {
         >
           Açougue / Aves / Peixaria
         </Button>
+        </Link>
+        <Link href='#coldCutsProduct'>
         <Button
           colorScheme='transparent'
           leftIcon={
@@ -112,6 +85,8 @@ export default function NavBar() {
         >
           Frios e Laticínios
         </Button>
+        </Link>
+        <Link href='#alcoholicBeers'>
         <Button
           colorScheme='transparent'
           leftIcon={
@@ -127,6 +102,24 @@ export default function NavBar() {
         >
           Bebidas Alcoólicas
         </Button>
+        </Link>
+        <Link href='#nonAlcoholicBeers'>
+        <Button
+          colorScheme='transparent'
+          leftIcon={
+            <Box as='span' fontSize={['24px', '30px']}>
+              <GiWaterBottle />
+            </Box>
+          }
+          fontWeight='200'
+          textColor='black'
+          transition='all 0.2s'
+          borderRadius='md'
+          _hover={{ bg: 'gray.100' }}
+        >
+          Bebidas Não Alcoólicas
+        </Button>
+        </Link>
       </Box>
     </Box>
   );

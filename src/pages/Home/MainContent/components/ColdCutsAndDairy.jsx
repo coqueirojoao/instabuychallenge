@@ -30,7 +30,13 @@ export default function ColdCutsAndDairy() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' w='100%' my='5'>
+    <Box
+      display='flex'
+      justifyContent='center'
+      w='100%'
+      my='5'
+      id='coldCutsProduct'
+    >
       <Flex
         align='center'
         w={['full', '70%']}
@@ -71,16 +77,16 @@ export default function ColdCutsAndDairy() {
           <Flex>
             {ColdCutsAndDairyItems?.items?.map((product) => (
               <Box
-                  key={product.id}
-                  w='300px'
-                  h='400px'
-                  mr='4'
-                  display='flex'
-                  justifyContent='center'
-                  alignItems='center'
-                  flexDirection='column'
-                >
-              <Link to={`/product/${product.slug}`}>
+                key={product.id}
+                w='300px'
+                h='400px'
+                mr='4'
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+                flexDirection='column'
+              >
+                <Link to={`/product/${product.slug}`}>
                   <Image
                     src={`https://assets.instabuy.com.br/ib.item.image.small/s-${product.images[0]}`}
                     alt={product.name}
@@ -115,8 +121,8 @@ export default function ColdCutsAndDairy() {
                   <Text fontSize='small' color='gray.600' w='50' h='100px'>
                     {product.name}
                   </Text>
-              </Link>
-                </Box>
+                </Link>
+              </Box>
             ))}
           </Flex>
         </Box>

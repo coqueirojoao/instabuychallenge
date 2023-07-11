@@ -7,8 +7,10 @@ import Footer from './components/Footer/Footer';
 export default function Home() {
   return (
     <Box>
-      <Header />
-      <NavBar />
+      <Box top='0' position={['none', 'sticky']} zIndex='2' bg='white'>
+        <Header />
+        <NavBar />
+      </Box>
       <MainContent />
       <Footer />
     </Box>

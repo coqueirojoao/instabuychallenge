@@ -18,7 +18,7 @@ export default function Offers() {
   };
 
   return (
-    <Box display='flex' justifyContent='center' py='5'>
+    <Box display='flex' justifyContent='center' py='5' id='offerProducts'>
       <Flex
         align='center'
         w={['full', '70%']}
