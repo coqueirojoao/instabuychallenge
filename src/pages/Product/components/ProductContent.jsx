@@ -2,6 +2,20 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 export default function ProductContent({ product }) {
+  function addToCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const productInCart = cart.find((item) => item.id === product.id);
+
+    if (productInCart) {
+      productInCart.amount += 1;
+    } else {
+      cart.push({ ...product, amount: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
   return (
     <Box
       display='flex'
@@ -71,7 +85,13 @@ export default function ProductContent({ product }) {
               <Text fontSize='15' pl='2' color='black'>{` /uni`}</Text>
             </Flex>
           )}
-          <Button colorScheme='green' size='lg' rounded='lg' my='10'>
+          <Button
+            colorScheme='green'
+            size='lg'
+            rounded='lg'
+            my='10'
+            onClick={addToCart}
+          >
             Adicionar ao carrinho
           </Button>
         </Flex>
@@ -123,6 +143,7 @@ export default function ProductContent({ product }) {
 
 ProductContent.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     name: PropTypes.string.isRequired,
